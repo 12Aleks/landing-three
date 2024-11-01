@@ -1,0 +1,112 @@
+@import url("https://fonts.cdnfonts.com/css/devil-breeze");
+@import url("https://fonts.cdnfonts.com/css/poppins");
+@import url("https://fonts.cdnfonts.com/css/bimbo");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,300&family=Roboto:ital,wght@0,300;0,400;0,500;1,300&family=Rubik+Wet+Paint&display=swap");
+nav.navbar {
+  background-color: #cccccc;
+  font: 400 clamp(1rem, 2vw, 1.2rem)/1.5rem Roboto, sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: #1B1B1B;
+  color: #cccccc;
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  background-size: 100%;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+*::-webkit-scrollbar {
+  width: 0;
+}
+
+.section {
+  width: 100%;
+  min-height: 100vh;
+  padding: 10vh 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section .decorate {
+  position: absolute;
+}
+.section .number {
+  font-family: "Rubik";
+  font-size: 15em;
+  font-weight: bold;
+}
+.section div.title, .section p {
+  letter-spacing: 1px;
+}
+.section div.title {
+  font: 500 clamp(1.5rem, 2vw, 1.875rem)/1.875rem Lato, sans-serif;
+  margin-bottom: 25px;
+}
+.section p {
+  font: 400 clamp(1rem, 1vw, 1.2rem)/1.5rem Lato, sans-serif;
+}
+
+#banner {
+  position: relative;
+}
+#banner .title {
+  color: #cccccc;
+  font: 800 clamp(8rem, 7vw, 11rem) "Rubik";
+  position: absolute;
+  top: 37%;
+  left: 31%;
+  transform: translate(-50%, -50%);
+}
+#banner .title::before {
+  content: attr(data-before);
+  position: absolute;
+  top: 0.5em;
+  inset: 0.66em 0 0 0;
+  z-index: -1;
+  color: #445022;
+}
+
+#contact table {
+  width: min(800px, 90vw);
+  padding-top: 2em;
+  font-size: 2em;
+  margin: auto;
+}
+#contact table td {
+  padding-block: 0.5em;
+  border-bottom: 1px dashed #445022;
+}
+#contact table td:nth-child(1) {
+  text-align: left;
+  font-weight: 500;
+}
+#contact table td:nth-child(2) {
+  text-align: right;
+  font-weight: 200;
+}
+#contact .sign {
+  font-family: "Roboto", sans-serif;
+  font-size: 10em;
+}
+
+#container3D {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  pointer-events: none;
+}
+@media screen and (max-width: 767px) {
+  #container3D {
+    position: absolute;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
