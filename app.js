@@ -1,7 +1,7 @@
 import * as THREE from "https://cdn.skypack.dev/three@0.136.0/build/three.module.js";
-import { GLTFLoader } from "https://cdn.skypack.dev/three@0.136.0/examples/jsm/loaders/GLTFLoader.js";
-import { DRACOLoader } from "https://cdn.skypack.dev/three@0.136.0/examples/jsm/loaders/DRACOLoader.js";
-import { gsap } from 'https://cdn.skypack.dev/gsap';
+import {GLTFLoader} from "https://cdn.skypack.dev/three@0.136.0/examples/jsm/loaders/GLTFLoader.js";
+import {DRACOLoader} from "https://cdn.skypack.dev/three@0.136.0/examples/jsm/loaders/DRACOLoader.js";
+import {gsap} from 'https://cdn.skypack.dev/gsap';
 
 const camera = new THREE.PerspectiveCamera(10, window.innerWidth / window.innerHeight, 0.1, 1000);
 camera.position.set(0, 0, 13);
@@ -15,7 +15,7 @@ const loader = new GLTFLoader();
 
 // Using compressed GLB file with Draco
 const draco = new DRACOLoader();
-draco.setDecoderConfig({ type: 'js' });
+draco.setDecoderConfig({type: 'js'});
 draco.setDecoderPath('https://www.gstatic.com/draco/v1/decoders/');
 // Connect the loader with the Draco
 loader.setDRACOLoader(draco);
@@ -24,23 +24,23 @@ loader.setDRACOLoader(draco);
 let modelPosition = [
     {
         id: 'banner',
-        position: { x: 1, y: -1, z: 0 },
-        rotation: { x: 0, y: 0, z: 0 },
+        position: {x: 1, y: -1, z: 0},
+        rotation: {x: 0, y: 0, z: 0},
     },
     {
         id: 'intro',
-        position: { x: -1, y: -1, z: 0 },
-        rotation: { x: 0, y: 1.5, z: 0 },
+        position: {x: -1, y: -1, z: 0},
+        rotation: {x: 0, y: 1.5, z: 0},
     },
     {
         id: 'description',
-        position: { x: 1, y: -1, z: 0 },
-        rotation: { x: -0.1, y: 3.5, z: 0 },
+        position: {x: 1, y: -1, z: 0},
+        rotation: {x: -0.1, y: 3.5, z: 0},
     },
     {
         id: 'contact',
-        position: { x: -1, y: -1, z: 0 },
-        rotation: { x: 0, y: 2.5, z: 0 },
+        position: {x: -1, y: -1, z: 0},
+        rotation: {x: 0, y: 2.5, z: 0},
     }
 ];
 
@@ -97,7 +97,7 @@ loader.load('/models/mickey.glb',
     }
 );
 
-const renderer = new THREE.WebGLRenderer({ alpha: true });
+const renderer = new THREE.WebGLRenderer({alpha: true});
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.getElementById('container3D').appendChild(renderer.domElement);
 
@@ -114,6 +114,7 @@ function animate() {
     renderer.render(scene, camera);
     if (mixer) mixer.update(0.015);
 }
+
 animate();
 
 window.addEventListener('scroll', () => {
