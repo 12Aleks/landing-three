@@ -42,7 +42,9 @@ body {
   list-style: none;
   box-sizing: border-box;
 }
+.section#banner{
 
+}
 .section {
   width: 100%;
   min-height: 100vh;
@@ -138,56 +140,3 @@ body {
   }
 }
 
-//@media screen and (max-width: 1023px) {
-//  #banner {
-//    .title {
-//      font-size: 5em;
-//    }
-//  }
-//  #intro {
-//    .content-fit {
-//      flex-direction: column;
-//    }
-//  }
-//}
-//
-//@media screen and (max-width: 767px) {
-//  #banner {
-//    .title {
-//      font-size: 3em;
-//    }
-//  }
-//  #intro {
-//    .content-fit {
-//      flex-direction: column;
-//    }
-//  }
-//  .section {
-//    .number {
-//      font-size: 5em;
-//    }
-//
-//    .content-fit {
-//      .title {
-//        font-size: 2em;
-//      }
-//    }
-//  }
-//  #description {
-//    .content-fit {
-//      padding-right: 0;
-//    }
-//  }
-//  #contact {
-//    table {
-//      font-size: 1em;
-//    }
-//
-//    .sign {
-//      font-size: 2em;
-//    }
-//  }
-//  #container3D {
-//    position: absolute;
-//  }
-//}

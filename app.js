@@ -50,7 +50,7 @@ const modelMove = () => {
     section.forEach(section => {
         const rect = section.getBoundingClientRect();
         console.log(rect.top, window.innerHeight / 3);
-        if (rect.top <= window.innerHeight) {
+        if (rect.top <= window.innerHeight / 1.2) {
             currentSection = section.id;
         }
     });
@@ -82,7 +82,7 @@ loader.load('/models/mickey.glb',
     function (gltf) {
         mickey = gltf.scene;
         console.log('SCENE', gltf.scene);
-        mickey.scale.set(.02, .02, .02);
+        mickey.scale.set(.018, .018, .018);
         mickey.position.set(1, -1, 0);
         mixer = new THREE.AnimationMixer(mickey);
         mixer.clipAction(gltf.animations[0]).play();
@@ -125,5 +125,12 @@ window.addEventListener('scroll', () => {
 
 window.addEventListener('resize', () => {
     renderer.setSize(window.innerWidth, window.innerHeight);
+    if(window.innerWidth <= 1198){
+        mickey.scale.set(.01, .01, .01);
+    }else{
+        mickey.scale.set(.02, .02, .02);
+    }
+
     camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
 });
