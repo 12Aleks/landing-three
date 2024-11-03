@@ -26,6 +26,135 @@ body {
   width: 0;
 }
 
+.section#banner {
+  position: relative;
+}
+.section#banner .title_block {
+  position: absolute;
+  top: 37%;
+  left: 31%;
+  transform: translate(-50%, -50%);
+}
+.section#banner .title_block .title {
+  color: #cccccc;
+  font: 800 clamp(8rem, 7vw, 11rem) "Rubik";
+}
+.section#banner .title_block .progress-container {
+  position: relative;
+  display: inline-block;
+}
+.section#banner .title_block .progress-ring {
+  position: absolute;
+  top: 32px;
+  left: 32px;
+  transform: rotate(-90deg);
+}
+.section#banner .title_block .progress-ring__circle {
+  fill: transparent;
+  stroke: #a1a1a1;
+  stroke-width: 5;
+  stroke-dasharray: 440; /* Adjust based on the circumference */
+  stroke-dashoffset: 440; /* Full circle to start */
+  transition: stroke-dashoffset 0.3s;
+}
+.section#banner .title_block .music-button {
+  margin: 2rem 0 0 2rem;
+  background-color: #cccccc;
+  border: 2px solid black;
+  border-radius: 50%;
+  width: clamp(100px, 10vw, 150px);
+  height: clamp(100px, 10vw, 150px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, transform 0.2s;
+}
+.section#banner .title_block .music-button span:nth-child(1) {
+  font-size: clamp(18px, 10vw, 2rem);
+  margin-bottom: 20px;
+}
+.section#banner .title_block .music-button span:nth-child(2) {
+  font-size: clamp(48px, 10vw, 5rem);
+}
+.section#banner .title_block .music-button:hover {
+  background-color: #cccccc;
+  transform: scale(1.05);
+}
+.section#banner .music-notes {
+  display: none;
+}
+.section#banner .music-notes.show {
+  display: block;
+  margin: auto;
+  position: relative;
+  width: 50%;
+  min-width: 300px;
+  height: 200px;
+  border: 0 solid #000;
+  color: #cccccc;
+}
+.section#banner .music-notes.show .note {
+  position: absolute;
+  font-size: 35px;
+  opacity: 0;
+  animation: notes 2s infinite linear;
+}
+.section#banner .music-notes.show .note-1 {
+  top: 60px;
+  left: 0;
+  animation-delay: 0.5s;
+}
+.section#banner .music-notes.show .note-2 {
+  top: 30px;
+  left: 30%;
+  animation-delay: 1s;
+}
+.section#banner .music-notes.show .note-3 {
+  top: 90px;
+  left: 60%;
+  animation-delay: 1.5s;
+}
+.section#banner .music-notes.show .note-4 {
+  top: 40px;
+  left: 90%;
+  animation-delay: 2s;
+}
+@keyframes notes {
+  0% {
+    transform: scale(1) translate(0, 0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.5) translate(50%, -50%);
+  }
+  80% {
+    opacity: 0;
+    transform: scale(1.5) translate(100%, -100%);
+  }
+  100% {
+    transform: scale(1.5) translate(100%, -100%);
+    opacity: 0;
+  }
+}
+@keyframes notes {
+  0% {
+    transform: scale(1) translate(0, 0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.5) translate(50%, -50%);
+  }
+  80%, 100% {
+    transform: scale(1.5) translate(100%, -100%);
+    opacity: 0;
+  }
+}
+
 .section {
   width: 100%;
   min-height: 100vh;
@@ -35,43 +164,30 @@ body {
   justify-content: center;
   align-items: center;
 }
-.section .decorate {
-  position: absolute;
+.section .text-block {
+  position: relative;
+  z-index: 101;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: rgba(5, 5, 5, 0.1);
 }
-.section .number {
+.section .text-block .number {
   font-family: "Rubik";
   font-size: 15em;
   font-weight: bold;
 }
-.section div.title, .section p {
+.section .text-block div.title, .section .text-block p {
   letter-spacing: 1px;
 }
-.section div.title {
+.section .text-block div.title {
   font: 500 clamp(1.5rem, 2vw, 1.875rem)/1.875rem Lato, sans-serif;
   margin-bottom: 25px;
 }
-.section p {
+.section .text-block p {
   font: 400 clamp(1rem, 1vw, 1.2rem)/1.5rem Lato, sans-serif;
 }
-
-#banner {
-  position: relative;
-}
-#banner .title {
-  color: #cccccc;
-  font: 800 clamp(8rem, 7vw, 11rem) "Rubik";
+.section .decorate {
   position: absolute;
-  top: 37%;
-  left: 31%;
-  transform: translate(-50%, -50%);
-}
-#banner .title::before {
-  content: attr(data-before);
-  position: absolute;
-  top: 0.5em;
-  inset: 0.66em 0 0 0;
-  z-index: -1;
-  color: #445022;
 }
 
 #contact table {

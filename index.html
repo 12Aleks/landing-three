@@ -32,7 +32,32 @@
 </header>
 <div class="section" id="banner">
     <div class="container-fluid">
-        <div class="title">3D ANIMATION</div>
+        <div class="music-notes">
+            <div class="note note-1">
+                &#9835; &#9833;
+            </div>
+            <div class="note note-2">
+                &#9833;
+            </div>
+            <div class="note note-3">
+                &#9839; &#9834;
+            </div>
+            <div class="note note-4">
+                &#9834;
+            </div>
+        </div>
+        <div class="title_block">
+            <div class="title">3D ANIMATION</div>
+            <audio src="/music/steamboat_bill.mp3" id="audio"></audio>
+            <div class="progress-container">
+                <svg class="progress-ring" width="150" height="150" onclick="soundClick()">
+                    <circle class="progress-ring__circle" cx="75" cy="75" r="70" />
+                </svg>
+                <button type="button" class="music-button" >
+                    <span>&#x266A</span><span>&#9836</span>
+                </button>
+            </div>
+        </div>
     </div>
 </div>
 <div class="section" id="intro">
@@ -115,7 +140,8 @@
 
 
 <div id="container3D"></div>
-<script type="module" src="./app.js"></script>
+<script type="module" src="./javascript/app.js"></script>
+<script src="./javascript/music.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
         crossorigin="anonymous"></script>
